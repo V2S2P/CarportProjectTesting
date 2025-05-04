@@ -1,0 +1,38 @@
+@startuml
+'https://plantuml.com/class-diagram
+'Domain Model'
+
+class Kunde{
+Mail
+Telefon
+Adresse
+}
+class Sælger{
+Telefon
+}
+class Ordre{
+Status
+Dato
+}
+class Faktura {
+Pris
+}
+class Carport {
+mål
+}
+class Brugsanvisning{
+Tekst
+}
+class Stykliste {
+Materialer
+}
+
+'pile'
+Kunde -- Ordre: 0-~
+Ordre -- Carport: 1-~
+Ordre -- Faktura: 1
+Sælger -- Ordre: 0-~
+Faktura -- Stykliste: 1
+Carport -- Brugsanvisning: 1
+
+@enduml
